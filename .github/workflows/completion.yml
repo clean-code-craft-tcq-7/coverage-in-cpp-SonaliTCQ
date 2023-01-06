@@ -1,0 +1,14 @@
+name: Enter Reflections
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: all entries made
+      run: bash ./.github/workflows/check-complete.sh
