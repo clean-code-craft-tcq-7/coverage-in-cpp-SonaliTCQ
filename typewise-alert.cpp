@@ -15,22 +15,18 @@ BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
   int lowerLimit = 0;
   int upperLimit = 0;
-  switch(coolingType) {
-    case PASSIVE_COOLING:
-      lowerLimit = 0;
-      upperLimit = 35;
-      break;
-    case HI_ACTIVE_COOLING:
-      lowerLimit = 0;
-      upperLimit = 45;
-      break;
-    case MED_ACTIVE_COOLING:
-      lowerLimit = 0;
-      upperLimit = 40;
-      break;
+  
+  lowerLimit = 0;
+  map<CoolingType, int> CoolingLim;
+  
+  CoolingLim[PASSIVE_COOLING] = {0,35};
+  CoolingLim[HI_ACTIVE_COOLING] = {0,45};
+  CoolingLim[MED_ACTIVE_COOLING] = {0,40};
+  
   }
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
+
 
 void checkAndAlert(
     AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
