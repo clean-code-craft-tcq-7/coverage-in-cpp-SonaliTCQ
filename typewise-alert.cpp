@@ -17,7 +17,7 @@ BreachType classifyTemperatureBreach(
   int lowerLimit = 0;
   int upperLimit = 0;
   
-  map<coolingType, limit> CoolingLim;
+  map<CoolingType, int> CoolingLim;
   
   CoolingLim[PASSIVE_COOLING] = {0,35};
   CoolingLim[HI_ACTIVE_COOLING] = {0,45};
