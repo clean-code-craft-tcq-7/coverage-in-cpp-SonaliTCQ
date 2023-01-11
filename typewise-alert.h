@@ -32,6 +32,13 @@ int lowerlimit;
 int upperlimit;
 } Limit;
 
+#define PAS_LOW_LIM 0
+#define PAS_UPP_LIM 35
+#define HI_LOW_LIM 0
+#define HI_UPP_LIM 45
+#define MED_LOW_LIM 0
+#define MED_UPP_LIM 40
+
 void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
