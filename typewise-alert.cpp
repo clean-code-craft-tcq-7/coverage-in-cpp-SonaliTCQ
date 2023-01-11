@@ -3,6 +3,13 @@
 #include <iostream>
 #include <map>
 
+std::map<CoolingType, std::pair<int, int>> CoolingLim;
+  
+  CoolingLim[PASSIVE_COOLING] = {0,35};
+  CoolingLim[HI_ACTIVE_COOLING] = {0,45};
+  CoolingLim[MED_ACTIVE_COOLING] = {0,40};
+
+
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   if(value < lowerLimit) {
     return TOO_LOW;
@@ -17,12 +24,6 @@ BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
   int lowerLimit = 0;
   int upperLimit = 0;
-  
-  std::map<CoolingType, std::pair<int, int>> CoolingLim;
-  
-  CoolingLim[PASSIVE_COOLING] = {0,35};
-  CoolingLim[HI_ACTIVE_COOLING] = {0,45};
-  CoolingLim[MED_ACTIVE_COOLING] = {0,40};
   
   lowerLimit = CoolingLim[coolingType].lowerLimit;
   upperLimit = CoolingLim[coolingType].upperLimit;
