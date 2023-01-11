@@ -3,7 +3,7 @@
 #include <iostream>
 #include <map>
 
-std::map<CoolingType, std::pair<int, int>> CoolingLim;
+std::map<CoolingType, std::pair<Limit, Limit>> CoolingLim;
   
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
