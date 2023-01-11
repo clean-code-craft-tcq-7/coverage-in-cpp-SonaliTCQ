@@ -1,4 +1,6 @@
 #pragma once
+#include<map>
+#include<iostream>
 
 typedef enum {
   PASSIVE_COOLING,
@@ -24,6 +26,11 @@ typedef struct {
   CoolingType coolingType;
   char brand[48];
 } BatteryCharacter;
+
+struct Limit {
+  int lowerLimit;
+  int upperLimit;
+};
 
 void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
