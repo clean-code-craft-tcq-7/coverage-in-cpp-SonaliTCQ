@@ -18,7 +18,7 @@ BreachType classifyTemperatureBreach(
   int lowerLimit = 0;
   int upperLimit = 0;
   
-  std::map<CoolingType, int> CoolingLim;
+  std::map<CoolingType, std::pair<int, int>> CoolingLim;
   
   CoolingLim[PASSIVE_COOLING] = {0,35};
   CoolingLim[HI_ACTIVE_COOLING] = {0,45};
@@ -27,7 +27,7 @@ BreachType classifyTemperatureBreach(
   lowerLimit = CoolingLim[coolingType].lowerLimit;
   upperLimit = CoolingLim[coolingType].upperLimit;
   
-  }
+  
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
 
