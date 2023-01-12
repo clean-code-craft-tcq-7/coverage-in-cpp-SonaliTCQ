@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <map>
+#include<sstream>
 
 std::map<CoolingType, mapLimit> CoolingLim;
 std::map<BreachType, std::string> SendBreach;
@@ -51,20 +52,31 @@ void checkAndAlert(
   }
 }
 
-sendToController(BreachType breachType, char *) {
-	char buffOut[100];
-  	const unsigned short header = 0xfeed;
-  	sprintf(buffOut, "%x : %x\n", header, breachType);
-	return buffOut;
+string sendToController(BreachType breachType) {
+	string alertmsg;
+	std::ostringstream msg;
+	const unsigned short header = 0xfeed;
+	msg << "%x : %x\n", header, breachType;
+	string alertmsg = msg.str();
+	cout << alertmsg << endl;
+	return alertmsg;
+	
 }
 
-void sendToEmail(BreachType breachType) {
-  	const char* recepient = "a.b@c.com";
+void sendToEmail(BreachType breachType, char *) {
 	
+	char buffOut[200];
+	
+  	
+	const char* recepient = "a.b@c.com";
 	std::cout << "To: %s\n" << *recepient << '\n';
+	
 	SendBreach[TOO_LOW] = {"Hi, the temperature is too low\n"};
 	SendBreach[TOO_HIGH] = {"Hi, the temperature is too high\n"};
 	SendBreach[NORMAL] = {};
 
 	std::cout << SendBreach[breachType].c_str();
+	
+	
+	
 }
