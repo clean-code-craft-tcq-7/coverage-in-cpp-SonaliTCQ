@@ -34,7 +34,7 @@ TEST_CASE("Classify the breach according to limits") {
 }
 
 TEST_CASE("check and alert the controller or mailbox") {
-  REQUIRE(checkAndAlert(TO_CONTROLLER, BatteryCharacter.CoolingType.PASSIVE_COOLING, 30) == "0xfeed: NORMAL");
+  REQUIRE(checkAndAlert(TO_CONTROLLER, classifyTemperatureBreach(PASSIVE_COOLING, 0)) == "0xfeed: NORMAL");
   //REQUIRE(checkAndAlert(TO_CONTROLLER, PASSIVE_COOLING, 45) == "0xfeed: TOO_HIGH");
   //REQUIRE(checkAndAlert(TO_CONTROLLER, PASSIVE_COOLING, -1) == "0xfeed: TOO_LOW");
  
