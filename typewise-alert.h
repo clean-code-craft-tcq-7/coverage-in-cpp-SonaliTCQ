@@ -30,7 +30,7 @@ typedef struct {
 typedef struct{
 int lowerlimit;
 int upperlimit;
-} Limit;
+} mapLimit;
 
 #define PAS_LOW_LIM 0
 #define PAS_UPP_LIM 35
