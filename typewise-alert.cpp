@@ -51,7 +51,7 @@ void checkAndAlert(
   }
 }
 
-void sendToController(BreachType breachType, char *buffOut) {
+sendToController(BreachType breachType, char *) {
 	char buffOut[100];
   	const unsigned short header = 0xfeed;
   	sprintf(buffOut, "%x : %x\n", header, breachType);
