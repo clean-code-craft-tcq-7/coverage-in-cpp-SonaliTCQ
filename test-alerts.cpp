@@ -9,8 +9,6 @@ TEST_CASE("infers the breach according to limits") {
   REQUIRE(inferBreach(12, 20, 30) == TOO_LOW);
   REQUIRE(inferBreach(32, 20, 30) == TOO_HIGH);
   REQUIRE(inferBreach(22, 20, 30) == NORMAL);
-  
- 
 }
 
 TEST_CASE("Classify the breach according to limits") {
@@ -36,7 +34,7 @@ TEST_CASE("Classify the breach according to limits") {
 }
 
 TEST_CASE("check and alert the controller or mailbox") {
-  REQUIRE(checkAndAlert(TO_CONTROLLER, BatteryCharacter.PASSIVE_COOLING, 30) == "0xfeed: NORMAL");
+  REQUIRE(checkAndAlert(TO_CONTROLLER, CoolingType.PASSIVE_COOLING, 30) == "0xfeed: NORMAL");
   //REQUIRE(checkAndAlert(TO_CONTROLLER, PASSIVE_COOLING, 45) == "0xfeed: TOO_HIGH");
   //REQUIRE(checkAndAlert(TO_CONTROLLER, PASSIVE_COOLING, -1) == "0xfeed: TOO_LOW");
  
