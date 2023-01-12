@@ -4,6 +4,7 @@
 #include <map>
 
 std::map<CoolingType, mapLimit> CoolingLim;
+std::map<BreachType, std::string> SendBreach;
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
 	if (value < lowerLimit) {
@@ -34,13 +35,13 @@ BreachType classifyTemperatureBreach(
 
 
 void checkAndAlert(
-    AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
+    	AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
 
-  BreachType breachType = classifyTemperatureBreach(
-    batteryChar.coolingType, temperatureInC
+  	BreachType breachType = classifyTemperatureBreach(
+    	batteryChar.coolingType, temperatureInC
   );
 
-  switch(alertTarget) {
+  	switch(alertTarget) {
     case TO_CONTROLLER:
       sendToController(breachType);
       break;
@@ -51,22 +52,17 @@ void checkAndAlert(
 }
 
 void sendToController(BreachType breachType) {
-  const unsigned short header = 0xfeed;
-  printf("%x : %x\n", header, breachType);
+  	const unsigned short header = 0xfeed;
+  	printf("%x : %x\n", header, breachType);
 }
 
 void sendToEmail(BreachType breachType) {
-  const char* recepient = "a.b@c.com";
-  switch(breachType) {
-    case TOO_LOW:
-      printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too low\n");
-      break;
-    case TOO_HIGH:
-      printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too high\n");
-      break;
-    case NORMAL:
-      break;
-  }
+  	const char* recepient = "a.b@c.com";
+	
+	std::cout << "To: %s\n", *recepient << '\n';
+	SendBreach[TOO_LOW] = {"Hi, the temperature is too low\n"};
+	SendBreach[TOO_HIGH] = {"Hi, the temperature is too high\n"};
+	SendBreach[NORMAL] = {};
+
+	std::cout << SendBreach[breachType].c_str();
 }
