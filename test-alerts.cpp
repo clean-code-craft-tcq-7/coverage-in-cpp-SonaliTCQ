@@ -51,7 +51,7 @@ REQUIRE(sendToController(NORMAL == "feed: NORMAL");
         
 REQUIRE(sendToEmail(NORMAL == "To: a.b@c.com");
 
-
+}
 
 
 
