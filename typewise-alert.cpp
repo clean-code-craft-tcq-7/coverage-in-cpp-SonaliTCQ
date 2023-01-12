@@ -3,6 +3,7 @@
 #include <iostream>
 #include <map>
 #include<sstream>
+#include<string>
 
 std::map<CoolingType, mapLimit> CoolingLim;
 std::map<BreachType, std::string> SendBreach;
