@@ -59,7 +59,7 @@ void sendToController(BreachType breachType) {
 void sendToEmail(BreachType breachType) {
   	const char* recepient = "a.b@c.com";
 	
-	std::cout << "To: %s\n", *recepient << '\n';
+	std::cout << "To: %s\n" << *recepient << '\n';
 	SendBreach[TOO_LOW] = {"Hi, the temperature is too low\n"};
 	SendBreach[TOO_HIGH] = {"Hi, the temperature is too high\n"};
 	SendBreach[NORMAL] = {};
