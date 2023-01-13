@@ -45,7 +45,8 @@ void checkAndAlert(
     	batteryChar.coolingType, temperatureInC
   );
 
-	string msg_controller, msgemail;
+	string msg_controller;
+	
   	switch(alertTarget) {
     case TO_CONTROLLER:
       msg_controller = sendToController(breachType);
