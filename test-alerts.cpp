@@ -35,22 +35,9 @@ TEST_CASE("Classify the breach according to limits") {
 
 TEST_CASE("check and alert the controller or mailbox") {
   
-  
-  //extern BatteryCharacter var;
-  
- // REQUIRE(checkAndAlert(TO_CONTROLLER, CoolingLim[coolingType], 0)) == "feed: NORMAL");
-  //REQUIRE(checkAndAlert(TO_CONTROLLER, PASSIVE_COOLING, 45) == "0xfeed: TOO_HIGH");
-  //REQUIRE(checkAndAlert(TO_CONTROLLER, PASSIVE_COOLING, -1) == "0xfeed: TOO_LOW")
+
+REQUIRE(strcmp(msg_controller,"feed: NORMAL") == 0);
 }
-
-//TEST_CASE("check and alert the controller or mailbox") {
-  
-
-//REQUIRE(strcmp(sendToController(NORMAL), "feed: NORMAL") == 0);
-        
-//REQUIRE(sendToEmail(NORMAL) == "To: a.b@c.com");
-
-//}
 
 
 
