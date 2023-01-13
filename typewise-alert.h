@@ -45,4 +45,5 @@ void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
 string sendToController(BreachType breachType);
+string msg_controller;
 void sendToEmail(BreachType breachType);
