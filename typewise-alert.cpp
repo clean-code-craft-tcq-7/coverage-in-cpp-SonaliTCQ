@@ -58,7 +58,7 @@ string sendToController(BreachType breachType) {
 	ostringstream msg;
 	const unsigned short header = 0xfeed;
 	msg << "%x : %x\n"<< header << breachType;
-	return msg_str();
+	return msg.str();
 	
 }
 
