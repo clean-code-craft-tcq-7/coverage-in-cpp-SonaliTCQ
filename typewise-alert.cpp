@@ -3,7 +3,9 @@
 #include <iostream>
 #include <map>
 #include<sstream>
-#include<string>
+#include <string>
+
+using namespace std;
 
 std::map<CoolingType, mapLimit> CoolingLim;
 std::map<BreachType, std::string> SendBreach;
@@ -43,9 +45,10 @@ void checkAndAlert(
     	batteryChar.coolingType, temperatureInC
   );
 
+	string msg_controller, msgemail;
   	switch(alertTarget) {
     case TO_CONTROLLER:
-      sendToController(breachType);
+      msg_controller = sendToController(breachType);
       break;
     case TO_EMAIL:
       sendToEmail(breachType);
@@ -58,15 +61,13 @@ string sendToController(BreachType breachType) {
 	std::ostringstream msg;
 	const unsigned short header = 0xfeed;
 	msg << "%x : %x\n", header, breachType;
-	string alertmsg = msg.str();
+	alertmsg = msg.str();
 	cout << alertmsg << endl;
 	return alertmsg;
 	
 }
 
-void sendToEmail(BreachType breachType, char *) {
-	
-	char buffOut[200];
+void sendToEmail(BreachType breachType) {
 	
   	
 	const char* recepient = "a.b@c.com";
@@ -77,7 +78,6 @@ void sendToEmail(BreachType breachType, char *) {
 	SendBreach[NORMAL] = {};
 
 	std::cout << SendBreach[breachType].c_str();
-	
 	
 	
 }
