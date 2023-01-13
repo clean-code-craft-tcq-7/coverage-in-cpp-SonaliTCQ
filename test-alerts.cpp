@@ -2,7 +2,6 @@
 
 #include "test/catch.hpp"
 #include "typewise-alert.h"
-#include "typewise-alert.cpp"
 
 TEST_CASE("infers the breach according to limits") {
   REQUIRE(inferBreach(20, 20, 30) == NORMAL);
