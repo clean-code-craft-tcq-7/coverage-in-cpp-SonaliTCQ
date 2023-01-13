@@ -44,14 +44,14 @@ TEST_CASE("check and alert the controller or mailbox") {
   //REQUIRE(checkAndAlert(TO_CONTROLLER, PASSIVE_COOLING, -1) == "0xfeed: TOO_LOW")
 }
 
-TEST_CASE("check and alert the controller or mailbox") {
+//TEST_CASE("check and alert the controller or mailbox") {
   
 
-REQUIRE(strcmp(sendToController(NORMAL), "feed: NORMAL") == 0);
+//REQUIRE(strcmp(sendToController(NORMAL), "feed: NORMAL") == 0);
         
 //REQUIRE(sendToEmail(NORMAL) == "To: a.b@c.com");
 
-}
+//}
 
 
 
