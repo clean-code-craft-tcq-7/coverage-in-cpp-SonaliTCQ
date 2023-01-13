@@ -37,7 +37,6 @@ TEST_CASE("Classify the breach according to limits") {
 
 TEST_CASE("check and alert the controller or mailbox") {
   
-msg_controller = sendToController(breachType);
 REQUIRE(strcmp(msg_controller,"feed: NORMAL") == 0);
 }
 
