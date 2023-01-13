@@ -39,8 +39,9 @@ TEST_CASE("check and alert the controller or mailbox") {
 
 BatteryCharacter batteryChar;
 batteryChar.coolingType = PASSIVE_COOLING;
-checkAndAlert(TO_CONTROLLER, batteryChar, 20, msg_controller);  
-REQUIRE(strcmp(msg_controller.c_str(),"feed: NORMAL") == 0);
+string print_msg;
+checkAndAlert(TO_CONTROLLER, batteryChar, 20, print_msg);  
+REQUIRE(strcmp(print_msg.c_str(),"feed: NORMAL") == 0);
   
 }
 
