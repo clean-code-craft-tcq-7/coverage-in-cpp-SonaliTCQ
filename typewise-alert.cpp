@@ -60,7 +60,7 @@ string sendToController(BreachType breachType) {
 	string alertmsg;
 	std::ostringstream msg;
 	const unsigned short header = 0xfeed;
-	msg << "%x : %x\n", header, breachType;
+	msg << "%x : %x\n"<< header << breachType;
 	alertmsg = msg.str();
 	cout << alertmsg << endl;
 	return alertmsg;
