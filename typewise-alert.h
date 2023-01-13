@@ -2,6 +2,8 @@
 #include<map>
 #include<iostream>
 
+using namespace std;
+
 typedef enum {
   PASSIVE_COOLING,
   HI_ACTIVE_COOLING,
