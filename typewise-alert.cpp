@@ -59,7 +59,7 @@ void checkAndAlert(
 
 string sendToController(BreachType breachType) {
 	string alertmsg;
-	std::ostringstream msg;
+	ostringstream msg;
 	const unsigned short header = 0xfeed;
 	msg << "%x : %x\n"<< header << breachType;
 	alertmsg = msg.str();
