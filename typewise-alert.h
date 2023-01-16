@@ -46,3 +46,6 @@ void checkAndAlert(
 
 string sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
+
+extern int *msg_controller;
+extern int *email_controller;
