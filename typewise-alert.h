@@ -44,7 +44,7 @@ int upperlimit;
 void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC, string msg_controller);
 
-string sendToController(BreachType breachType);
+void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
 
 extern int *msg_controller;
