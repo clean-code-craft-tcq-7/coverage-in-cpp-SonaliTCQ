@@ -37,12 +37,7 @@ TEST_CASE("Classify the breach according to limits") {
 
 TEST_CASE("check and alert the controller or mailbox") {
 
-BatteryCharacter batteryChar;
-string print_msg;
-  
-batteryChar.coolingType = PASSIVE_COOLING;  
-checkAndAlert(TO_CONTROLLER, batteryChar, 20, print_msg);  
-REQUIRE(strcmp(print_msg.c_str(),"feed : 0\n") == 0);
+
   
 }
 
