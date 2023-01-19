@@ -49,8 +49,12 @@ TEST_CASE("check and alert the controller or mailbox") {
 
   BatteryCharacter batteryChar;
   
-REQUIRE(checkAndAlert(TO_CONTROLLER, batteryChar, 20) == 0);
-  REQUIRE(checkAndAlert(TO_EMAIL, batteryChar, 20) == 1);
+checkAndAlert(TO_CONTROLLER, batteryChar, 20);
+REQUIRE(sendToCont_interface_check() == 0);
+  
+  
+checkAndAlert(TO_EMAIL, batteryChar, 20);
+REQUIRE(sendToCont_interface_check() == 1);
   
 }
 
