@@ -40,7 +40,7 @@ BreachType classifyTemperatureBreach(
 
 
 void checkAndAlert(
-    	AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC, int *msg_controller, int *email_controller ) {
+    	AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC ) {
 
   	BreachType breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
 	
