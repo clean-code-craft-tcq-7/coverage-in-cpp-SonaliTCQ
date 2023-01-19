@@ -47,7 +47,9 @@ TEST_CASE("Classify the breach according to limits") {
 
 TEST_CASE("check and alert the controller or mailbox") {
 
-
+  BatteryCharacter batteryChar;
+  
+REQUIRE(checkAndAlert(TO_CONTROLLER, batteryChar, 20) == 0);
   
 }
 
