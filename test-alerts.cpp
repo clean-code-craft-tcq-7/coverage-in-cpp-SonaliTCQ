@@ -54,7 +54,7 @@ REQUIRE(sendToCont_interface_check() == 0);
   
   
 checkAndAlert(TO_EMAIL, batteryChar, 20);
-REQUIRE(sendToCont_interface_check() == 1);
+REQUIRE(sendToMail_interface_check() == 1);
   
 }
 
