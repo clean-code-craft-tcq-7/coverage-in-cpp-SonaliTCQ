@@ -6,11 +6,11 @@
 
 //test code
 
-int sendToCont_interface_check(breachType){
+int sendToCont_interface_check(){
 return 0; // To controller, its 0
 }
 
-int sendToCont_interface_check(breachType){
+int sendToCont_interface_check(){
 return 1;  // To email its 1
 }
   
