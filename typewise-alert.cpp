@@ -4,6 +4,7 @@
 #include <map>
 #include<sstream>
 #include <string>
+#include "test-alerts.cpp"
 
 using namespace std;
 
@@ -45,10 +46,12 @@ void checkAndAlert(
 	
   	switch(alertTarget) {
     case TO_CONTROLLER:
-      *msg_controller = sendToController(breachType);
+      *msg_controller = sendToCont_interface_check();			// for test code
+	sendToController(breachType);
       break;
     case TO_EMAIL:
-      *email_controller = sendToEmail(breachType);
+      *email_controller = sendToMail_interface_check();		// for test code
+	sendToEmail(breachType);
       break;
   }
 }
