@@ -1,4 +1,8 @@
 #pragma once
+#include<map>
+#include<iostream>
+
+using namespace std;
 
 typedef enum {
   PASSIVE_COOLING,
@@ -25,8 +29,23 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
+typedef struct{
+int lowerlimit;
+int upperlimit;
+} mapLimit;
+
+#define PAS_LOW_LIM 0
+#define PAS_UPP_LIM 35
+#define HI_LOW_LIM 0
+#define HI_UPP_LIM 45
+#define MED_LOW_LIM 0
+#define MED_UPP_LIM 40
+
 void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
 void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
+
+int sendToCont_interface_check();
+int sendToMail_interface_check();
