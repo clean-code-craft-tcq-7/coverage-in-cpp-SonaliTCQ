@@ -42,12 +42,12 @@ BreachType classifyTemperatureBreach(
 void checkAndAlert(
     	AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC,) {
 	
-	int *msg_controller, *email_controller;
+	int *email_controller;
   	BreachType breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
 	
   	switch(alertTarget) {
     case TO_CONTROLLER:
-      *msg_controller = sendToCont_interface_check();			// for test code
+      sendToCont_interface_check();			// for test code
 	sendToController(breachType);
       break;
     case TO_EMAIL:
