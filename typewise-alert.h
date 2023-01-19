@@ -42,13 +42,10 @@ int upperlimit;
 #define MED_UPP_LIM 40
 
 void checkAndAlert(
-  AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC, string msg_controller);
+  AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
 void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
 
 int sendToCont_interface_check();
 int sendToMail_interface_check();
-
-
-extern int *email_controller;
