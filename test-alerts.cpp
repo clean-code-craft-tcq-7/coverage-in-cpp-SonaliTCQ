@@ -4,7 +4,17 @@
 #include "typewise-alert.h"
 #include <string.h>
 
+//test code
 
+int sendToCont_interface_check(breachType){
+return 0; // To controller, its 0
+}
+
+int sendToCont_interface_check(breachType){
+return 1;  // To email its 1
+}
+  
+  
 TEST_CASE("infers the breach according to limits") {
   REQUIRE(inferBreach(20, 20, 30) == NORMAL);
   REQUIRE(inferBreach(30, 20, 30) == NORMAL);
